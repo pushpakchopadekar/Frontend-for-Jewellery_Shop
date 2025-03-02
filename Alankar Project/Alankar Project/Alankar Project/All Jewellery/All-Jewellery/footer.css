@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Nunito Sans", sans-serif;
+    
+}
+
+.main-footer{
+    background-color: #efe3e3;
+    user-select: none;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    padding: 70px;
+    grid-template-areas: 
+    "lists lists lists download-link"
+    "divider divider divider divider"
+    "links links links links";
+}
+
+.main-footer h3{
+    font-size: 20px;
+    font-weight: 700;
+    color: #832627;
+    position: relative;
+    z-index: 1;
+}
+
+.main-footer ul{
+    grid-area: lists;
+    list-style: none;
+    line-height: 3.6;
+}
+
+.main-footer ul li a{
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: none;
+    color: black;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.main-footer ul li a:hover{
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.main-footer ul li a::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1.5px;
+    width: 0px;
+    background-color: black;
+    transition: all 0.3s ease;
+}
+
+.main-footer ul li a:hover::before{
+    width: 100%;
+}
+
+.main-footer .download{
+    grid-area: download-link;
+}
+
+.main-footer .download h4{
+    font-size: 20px;
+    font-weight: 700;
+    /* text-align: center; */
+}
+
+.main-footer .download .image{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0px;
+}
+
+.main-footer .image img{
+    height: 200px;
+    width: 200px;
+}
+
+.main-footer .download-links{
+    display: flex;
+    justify-content: center;
+    height: 70px;
+}
+
+.main-footer .download-links img{
+    height: 40px;
+    width: 134px;
+    transition: all 0.4s ease;
+    border-radius: 9px;
+}
+
+.main-footer .download-links img:hover{
+      filter: brightness(80%);
+    box-shadow: 0px 0px 200px 2px #832627;
+}
+
+.main-footer .follow-us{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.main-footer .follow-us a img{
+    height: 25px;
+    width: 25px;
+    transition: scale 0.3s ease;
+}
+
+.main-footer .follow-us a img:hover{
+    scale: 1.5;
+}
+
+.main-footer .contact-us img{
+    height: 25px;
+    width: 35px;
+    transition: all 0.3s ease;
+}
+
+.main-footer .contact-us img:hover{
+    transform: scale(1.1);
+}
+
+.main-footer .divider{
+    margin: 0 auto;
+    width: 90%;
+    height: 10px;
+    border-top: 2px solid black;
+}
+
+.lower-footer{
+    background-color: #efe3e3;
+    height: 150px;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.lower-footer .investors img{
+    height: 25px;
+}
+
+.tnc{
+    width: 400px;
+    font-size: 14px;
+    color: #832627;
+    line-height: 30px;
+}
+
+.terms a{
+    font-size: 14px;
+    color: #832627;
+    text-decoration: none;
+    padding: 0 12px;
+    transition: all 0.3s ease;
+}
+
+.terms .pp{
+    border-left: 1px solid #832627;
+    border-right: 1px solid #832627;
+}
+
+.terms a:hover{
+    font-weight: 700;
+}
+
+.footer-2 {
+    display: none;
+}
+
+
+
+@media screen and (max-width: 1120px) {
+    footer {
+        display: none;
+    }
+
+    .footer-2 {
+        display: block;
+        padding: 20px;
+        background-color: #efe3e3;
+    }
+
+    .footer-heading {
+        display: block;
+        font-size: 18px;
+        font-weight: 700;
+        color: #832627;
+        cursor: pointer;
+        padding: 10px 0;
+        border-bottom: 1px solid #832627;
+    }
+
+    .useful-links-2,
+    .information-2,
+    .contact-us-2 {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+    }
+
+    #useful-links-toggle:checked ~ .useful-links-2,
+    #information-toggle:checked ~ .information-2,
+    #contact-us-toggle:checked ~ .contact-us-2 {
+        max-height: 300px; 
+    }
+
+    .footer-toggle {
+        display: none;
+    }
+    .main-footer-2 a{
+        text-decoration: none;
+        color: black;
+        font-size: 12px;
+    }
+    
+    .main-footer-2 a:hover{
+        font-weight: 700;
+        text-decoration: underline;
+    }
+    
+    .main-footer-2 label{
+        font-size: 16px;
+    }
+    
+    .contact-us-2 li img{
+        height: 12px;
+    }
+    
+    .qr-div{
+        width: 100%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+
+    }
+    .qr-div img{
+        height: 200px;
+        width: 200px;
+        transition: all 0.5s ease;
+    }
+    
+    .qr-div img:hover{
+        box-shadow: 0px 0px 50px 1px #832627;
+    }
+
+    .download-apple-android{
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .download-apple-android a img{
+        height: 70px;
+        border-radius: 7px;
+        width: 80%;
+    }
+    
+    .download-apple-android a{
+        text-align: center;
+    }
+
+    .lower-footer{
+        flex-wrap: wrap;
+    }
+
+
+}

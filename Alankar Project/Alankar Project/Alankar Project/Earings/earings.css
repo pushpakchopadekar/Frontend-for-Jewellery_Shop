@@ -1,0 +1,1091 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html{
+    height: 100%;
+    width: 100%;
+    font-family: "Nunito", sans-serif;
+}
+
+body::-webkit-scrollbar{
+    width: 7px;
+}
+
+body::-webkit-scrollbar-thumb{
+    background: rgba(0, 0, 0, 0.304);
+}
+
+.main-container{
+    height: 100%;
+    width: 100%;
+}
+
+.nav-bar{
+    width: 100%;
+    height: 128px;
+}
+
+.nav-items{
+    user-select: none;
+    height: 75px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: #f2eae8;
+    padding: 0px px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+}
+
+.nav-items img{
+    height: 100px;
+    width: 100px;
+}
+
+.icons{
+    height: 50px;
+    width: 83px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.icons img{
+    height: 23px;
+    width: 30px;
+}
+
+.icons span{
+    font-size: 14px;
+    font-weight: 400;
+    color: #832627;
+}
+
+.nav-items input[type=text]{
+    font-family: "Nunito", sans-serif;
+    font-weight: 300;
+    padding:  9px 10px;
+    width: 550px;
+    flex-shrink: 1;
+    font-size: 18px;
+    border-radius: 5px;
+    position: relative;
+    left: 5px;
+    border: none;
+    transition: box-shadow 0.5s ease;
+}
+
+.nav-items input[type=text]::placeholder{
+    font-size: 14px;
+    font-weight: 400;
+    font-family: "Nunito", sans-serif;
+}
+
+.input-search input[type=text]:focus-visible{
+    outline: none;
+    border: none;
+    box-shadow: -100px 0px 50000px 1px #832627;
+}
+
+
+.input-search{
+    display: flex;
+    align-items: center;
+}
+
+.input-search img{
+    height: 42px;
+    width: 35px;
+    background-color: white;
+    padding: 8px 4px;
+    cursor: pointer;
+}
+
+.search-icon{
+    border-radius: 0px 5px 5px 0px;
+}
+
+.nav-logo{
+    height: 50px;
+    width: 80px;
+}
+
+.nav-logo img{
+    height: 100%;
+    width: 100%;
+}
+
+.cart-div{
+    position: relative;
+}
+
+.cart-number{
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    position: absolute;
+    right: 20px;
+    top: 0;
+    background-color: #832627;
+    display: flex;
+    font-size: 10px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.icons:hover{
+    cursor: pointer;
+    scale: 1.1;
+}
+
+/* --------------------------NAV-BAR-2--------------------------------------- */
+
+.nav-2{
+    user-select: none;
+    width: 100%;
+    height: 115px;
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-shrink: 0;
+    gap: 30px;
+}
+
+.nav-2 .pages{
+    height: 100%;
+    color: black;
+    padding-bottom: 10px;
+    font-size: 14px;
+    white-space: nowrap;
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    z-index: 11;
+    cursor: pointer;
+}
+
+.nav-2 .pages .super-list{
+    color: black;
+    text-decoration: none;
+    font-size: 14.4px;
+    transition: all 0.3s ease;
+}
+
+.nav-2 .pages .super-list:hover{
+    font-weight: 600;
+    color: #832627;
+}
+
+.nav-2 .pages .super-list::before{
+    content: "";
+    z-index: -1;
+    width: 100%;
+    position: absolute;
+    transform: rotateY(90deg);
+    bottom:0;
+    left: 0;
+    border-radius: 2px;
+    background-color: #832627;
+    height: 4px;
+    overflow-x: hidden;
+    transition: all 0.25s ease;
+}
+
+.nav-2 .pages .super-list:hover::before{
+    transform: rotateY(0);
+}
+
+.dropdown-list{
+    background-color: rgba(255, 255, 255,0.7);
+    box-shadow: 0px 0px 30px 2px rgba(131, 38, 39, 0.5);
+    border-radius: 5px;
+    backdrop-filter: blur(10px);
+    height:min-content;
+    width: fit-content;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-right: 10px;
+    display: none;
+    z-index: 15;
+}
+
+.pages:hover .dropdown-list{
+    display: block;
+    animation: fade-in 0.3s ease;
+}
+
+#shift-left{
+    right: 0px !important;
+}
+
+
+
+/* -----------------------------Animations---------------------------------- */
+
+
+@keyframes fade-in {
+    from{
+        transform: translate(10px, 10px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in-down {
+    from{
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    
+}
+
+@keyframes go-left {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-10px);
+    }
+    
+} 
+
+@keyframes go-right {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(10px);
+    }
+    
+} 
+
+
+
+
+/* --------------------------table css-------------------------------------- */
+
+table, th, td {
+    text-align: left;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 7px;
+}
+
+td a{
+    color: black;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+td a:hover{
+    color: #832627;
+}
+
+.category {
+    font-size: 16px;
+    color: #832627;
+    font-weight: 700;
+}
+
+.gift-card {
+    color: #832627;
+    font-size: 13px;
+}
+
+td img{
+    height: 20px;
+    width: 20px;
+}
+
+.color{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+
+@media screen and (min-width:1121px){
+    .nav-bar{
+        display: block;
+    }
+    .mini-nav{
+        display: none;
+    }
+}
+
+@media screen and (max-width:1120px) {
+    .nav-bar{
+        display: none;
+    }
+    .mini-nav{
+        display: block;
+        background-color: #f2eae8;
+        width: 100%;
+        height: 120px;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .mini-nav-container{
+        height: 100px;
+        width: 100%;
+    }
+
+    .upper-mini-nav{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .menu-n-logo{
+        height: 50%;
+        width:14%;
+        padding: 10px 5px;
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        align-items: center;
+        cursor: pointer;
+    }
+    .menu-n-logo img{
+        height: 25px;
+    }
+
+    .mini-icons img{
+        cursor: pointer;
+        height: 30px;
+        padding: 1px;
+    }
+
+    .search{
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .search input[type=text]{
+        font-family: "Nunito", sans-serif;
+        font-size: 15px;
+        width: 650px;
+        padding: 5px 0px;
+        outline: none;
+        border: none;
+    }
+
+    .input-icons img{
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        height: 30px;
+        background-color: white;
+    }
+
+    .input-icons .mini-search{
+        border-radius: 5px 0px 0px 5px;
+    }
+
+    .input-icons .mini-mic{
+        border-radius: 0px 5px 5px 0px;
+    }
+}
+
+.side-menu{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    z-index: 10000000000;
+    transform: translateX(-200%);
+    width: 80%;
+    overflow-y: scroll;
+    box-shadow: 0px 0px 2000px 20px black;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.side-menu::-webkit-scrollbar{
+    width: 0px;
+    
+}
+
+.side-menu-header{
+    display: flex;
+    padding: 10px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.side-menu .side-menu-header{
+    height: 165px;
+    position: relative;
+    background: hsla(359, 55%, 33%, 1);
+    background: radial-gradient(circle, rgb(130, 38, 40) 0%, hsla(0, 0%, 100%, 1) 100%);
+    background: -moz-radial-gradient(circle, rgb(130, 38, 40) 0%, hsla(0, 0%, 100%, 1) 100%);
+    background: -webkit-radial-gradient(circle, rgba(130, 56, 38, 0.819) 0%, hsla(0, 0%, 100%, 1) 100%);
+}
+
+.side-menu-header img{
+    cursor: pointer;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    height: 25px;
+}
+
+#check:checked~.side-menu{
+    transform: translateX(0);
+}
+
+.side-menu-header h3, .side-menu-header h4{
+    font-size: 25px;
+    color: #832627;
+    font-weight: 800;
+}
+
+.first-order{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.side-menu-header-right h3{
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.side-menu-header-right h3:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+/* ----------------------------------------------- */
+.menu {
+    width: 200px;
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+  
+  .menu-item {
+    margin-bottom: 10px;
+  }
+  
+  /* Hide the checkboxes */
+  .menu-item input[type="checkbox"] {
+    display: none;
+  }
+  
+  .menu-title {
+    cursor: pointer;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    color: #000;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .menu-title:hover {
+    color: brown;
+  }
+
+  .sublist {
+    list-style: none;
+    padding-left: 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  
+  .sublist li {
+    padding: 5px 0;
+    color: #555;
+  }
+  .menu-item input[type="checkbox"]:checked + .menu-title + .sublist {
+    max-height: 500px;
+    padding: 10px 0;
+    overflow: visible;
+  }
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; /* Set background to white */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 85%;
+    margin: 0 auto;
+    padding-top: none;
+}
+
+nav {
+    padding-top: 10px;
+    font-size: 14px;
+    color: #7f7f7f;
+    margin-bottom: 5px;
+}
+
+nav a {
+    padding-top: 20px;
+    text-decoration: none;
+    font: 400 16px ibm plex sans, sans-serif;
+    color: #56544e !important;
+}
+
+.right-arrow {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+header h1 {
+    font-size: 25px;
+    color: #631717;
+    & > .result {
+        font-family: inter, san-serif;
+        color: #56544e;
+        font-size: 18px;
+        font-weight: 400;
+    }
+   margin-bottom: 20px;
+   margin-top: 15px;
+}
+
+.filters {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.filter-btn,
+.category-btn {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin-right: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.category-btn img {
+    width: 20px; /* Set a consistent width for the icon */
+    height: auto; /* Maintain aspect ratio */
+    
+}
+
+.filter-btn span {
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.filter-btn img {
+    padding-right: 10px;
+}
+
+.filter-btn:hover,
+.category-btn:hover {
+    background-color: #fff;
+}
+
+
+.sort {
+    margin-left: auto;
+    border: 1px solid #ddd;
+    width: fit-content;
+    border-radius: 30px;
+}
+
+.sort-container {
+    display: inline-block; 
+    position: relative;
+}
+
+.sort-button {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-family: sans-serif;
+    cursor: pointer; 
+    display: flex;
+    align-items: center;
+}
+
+.sort-button p {
+    margin: 0 8px 0 0; 
+    font-size: 16px;
+}
+
+.sort-button img {
+    width: 20px; 
+    height: auto;
+}
+
+
+/* Product List Styles */
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Increased size for boxes */
+    gap: 20px; /* Space between boxes */
+    margin-top: 20px; /* Space above product list */
+}
+
+.product {
+    position: relative;
+    box-sizing: border-box;
+    background-color: #fff;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease; /* Transition for scaling */
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.badge {
+    position: absolute;
+    background: linear-gradient(90deg, rgba(131, 39, 41, 0.9) 0%, rgba(245, 206, 155, 0.9) 135%) !important;
+    color: white;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    z-index: 1; /* Ensure badge is above other elements */
+
+    & > .star {
+        padding-right: 5px;
+    }
+}
+
+.image-wrapper {
+    transition: transform 0.3s ease;
+}
+
+.default-image,
+.hover-image {
+    width: 100%;
+    height: auto; /* Ensure images maintain their aspect ratio */
+    border-radius: 4px;
+    transition: opacity 0.1s ease; /* Add transition for opacity */
+}
+
+.hover-image {
+    position: absolute;
+    top: 0;
+    right: -100%; /* Start off-screen to the right */
+    opacity: 0; /* Initially hidden */
+}
+
+.image-container:hover {
+    box-shadow: 4px 4px 4px 4px rgb(230, 228, 228);
+    border: #d1d0cd solid;
+    border-radius: 4px;
+    border-width: 2px;
+   
+}
+
+
+.image-container:hover .hover-image {
+    /* Show hover image on hover */
+    right: 0; /* Move into view */
+    opacity: 1; /* Show image */
+    transition: right 0.3s ease, opacity 0.3s ease; /* Smooth transition */  
+    border: #56544e;
+    border-radius: 7px;
+
+}
+
+.image-container:hover .default-image {
+    opacity: 0; /* Hide default image on hover */
+}
+
+/* Zoom effect on images */
+.image-container:hover .image-wrapper {
+    transform: scale(1.05); /* Zoom in on the image wrapper */
+}
+
+/* Heart icon style */
+.like-icon {
+    font-size: 24px; /* Adjust size as needed */
+    position: absolute;
+    top: 10px; /* Position as needed */
+    right: 10px; /* Position as needed */
+    color: #aaa; /* Initial color */
+    cursor: pointer;
+}
+.like-icon:hover .wishlist-btn {
+    opacity: 1; /* Fade in */
+    pointer-events: auto; /* Enable interaction */
+}
+.wishlist-btn {
+    width: 115px;
+    position: absolute; /* Position relative to the like icon */
+    top: 30px; /* Adjust this to position the button below the heart icon */
+    right: 0px; /* Align with the heart icon */
+    background-color: #b5655b; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove border */
+    padding: 5px 10px; /* Padding around the button */
+    border-radius: 5px; /* Rounded corners */
+    transition: opacity 0.3s ease; /* Transition for fade effect */
+    opacity: 0; /* Initially hidden */
+    pointer-events: none;
+    /* Prevent interaction when hidden */
+}
+/* Wishlist Button hover effect */
+.wishlist-btn:hover {
+    background-color: #a0524d; /* Darker shade on hover */
+}
+
+.hover-buttons {
+    position: absolute; /* Position it relative to the image */
+    bottom: 10px; /* Position buttons 10px from the bottom */
+    right: 10px; /* Position buttons 10px from the right */
+    display: flex; /* Use flexbox to align the buttons */
+    gap: 0; /* Remove space between buttons, as we'll add partitions */
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.3s ease; /* Smooth transition for showing the buttons */
+    border: 1px solid gray; /* Shared border */
+    background-color: white; /* White background for the buttons container */
+    border-radius: 5px 0 0 0; /* Rounded corners for the border */
+    padding: 5px; /* Padding around the buttons */
+}
+
+.image-container:hover .hover-buttons {
+    opacity: 1; /* Show the buttons on hover over the image */
+}
+
+.similar-btn, .try-btn {
+    padding: 5px 10px; /* Decreased padding for smaller buttons */
+    background-color: transparent; /* Transparent background for buttons */
+    color: black; /* Black text color */
+    border: none; /* Remove button border */
+    cursor: pointer; /* Change cursor on hover */
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    border-right: 1px solid gray; /* Add right border to create a partition */
+}
+
+.try-btn {
+    border-right: none; /* Remove the right border from the last button */
+}
+
+.similar-btn:hover, .try-btn:hover {
+    background-color: #a0524d; /* Change background on hover */
+    color: white; /* Change text color on hover */
+}
+
+.try-btn img, .similar-btn img {
+    margin-right: 5px; /* Space between the icon and text */
+    width: 16px; /* Adjust icon size to fit smaller buttons */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.product-details {
+    margin: 15px 15px 10px 15px;
+}
+
+.product-name {
+    text-align: start;
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+    margin-bottom: 5px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.price-status {
+    display: flex;
+    justify-content: space-between; /* Distributes space evenly if needed */
+    align-items: center; /* Align items vertically centered */
+    margin-top: 5px; /* Adjust margin as needed */
+}
+
+.product-price {
+    font-size: 18px;
+    color: #631717;
+    font-weight: bold;
+}
+
+.product-status {
+    font-size: 14px;
+    color: red;
+    margin-left: 10px; /* Space between price and status */
+}
+.category-grid-banner-slot {
+    grid-column: span 2; /* Make the banner span two columns */
+}
+
+.category-grid-banner-slot .category-grid-banner img {
+    max-height: 28.5rem;
+    height: 500px;
+    border-radius: 4px;
+    width: 100%; /* Ensure image takes full width of the banner */
+    object-fit:fill; /* Maintain aspect ratio but cover the entire area */
+}
+
+.img-banner {
+    vertical-align: middle;
+    border: none;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+
+
+  .load-more-button {
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    width: auto; /* Auto width to fit button */
+    padding: 20px 0; /* Optional: Add some vertical padding */
+}
+
+.load-more-btn {
+    font: 400 20px fraunces, serif; /* Font style */
+    color: #fff; /* Text color */
+    width: 153px; /* Set the button width */
+    height: 58px; /* Set the button height */
+    border: none; /* Remove border */
+    border-radius: 40px; /* Rounded corners */
+    background: linear-gradient(90.18deg, #832729 .17%, #631517 99.86%); /* Button gradient */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.load-more-btn:hover {
+    background-color: #6b1a1b; /* Darker red on hover */
+    transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+@media (max-width: 1023.98px) {
+    .load-more-btn {
+        width: 118px; /* Smaller width for mobile */
+        height: 38px; /* Smaller height for mobile */
+        font: 400 14px fraunces, serif; /* Smaller font size for mobile */
+    }
+}
+
+
+/* Main container for assurance */
+.assurance {
+    position: relative; /* Establish positioning context */
+    margin: 40px auto; /* Center the box */
+    width: 90%; /* Increased width */
+    max-width: 1200px; /* Set a maximum width for larger screens */
+}
+
+/* Background PNG styling */
+.assurance-background {
+    width: 100%; /* Ensure the image covers the full width */
+    border-radius: 50px; /* Match the rounded corners */
+    display: block; /* Ensures no extra space below the image */
+}
+
+/* Content overlay */
+.assurance-text {
+    position: absolute; /* Position absolutely within the container */
+    top: 20%; /* Adjust vertical position */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust position to be exactly centered */
+    text-align: center; /* Center text */
+    color: #300708; /* Set text color */
+    z-index: 1; /* Ensure text is above the background */
+}
+
+/* Header for the assurance box */
+.ass-head {
+    font-family: 'Fraunces', serif;
+    font-size: 48px; /* Increased font size */
+    margin: 5px 0; /* Adjusted margin for better spacing */
+    font-weight: bold;
+}
+
+/* Description text */
+.ass-desc {
+    font-family: 'Fraunces', serif;
+    font-size: 24px; /* Increased font size */
+    color: #56544e;
+    margin: 20px 0; /* Adjusted margin for better spacing */
+    font-weight: 300;
+}
+
+/* Flex container for the assurance elements */
+.assurance-element {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 20px; /* Adjusted gap for space between items */
+    position: absolute; /* Fix position of the items */
+    bottom: 20px; /* Adjust from bottom */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust position to be centered */
+    z-index: 1; /* Ensure items are above background */
+}
+
+/* Individual assurance items */
+.assurance-item {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9); /* Light background for each item with some transparency */
+    border-radius: 20px; /* Rounded corners for items */
+    padding: 20px; /* Padding around each item for spacing */
+}
+
+/* Assurance item images */
+.assurance-item img {
+    width: 100px; /* Fixed image size */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Assurance item text with wrapping */
+.assurance-item p {
+    font-family: 'Fraunces', serif;
+    font-size: 18px; /* Increased font size */
+    margin-top: 10px;
+    line-height: 1.4;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .assurance-element {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+    }
+
+    .ass-head {
+        font-size: 36px; /* Smaller header on medium screens */
+    }
+
+    .ass-desc {
+        font-size: 20px; /* Smaller description on medium screens */
+    }
+
+    .assurance-item img {
+        width: 80px; /* Slightly smaller images */
+    }
+
+    .assurance-item p {
+        font-size: 16px; /* Smaller text for items */
+    }
+}
+
+@media (max-width: 768px) {
+    .assurance-element {
+        grid-template-columns: 1fr; /* 1 column on mobile */
+    }
+
+    .ass-head {
+        font-size: 28px; /* Smaller header on mobile */
+    }
+
+    .ass-desc {
+        font-size: 18px; /* Smaller description on mobile */
+    }
+
+    .assurance-item img {
+        width: 60px; /* Smaller images for mobile */
+    }
+
+    .assurance-item p {
+        font-size: 14px; /* Smaller text for items on mobile */
+    }
+}
+
+/* recently viwed */
+#recently-viewed-container {
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    margin-bottom: 60px;
+    margin-left: 70px;
+    display: flex;
+    z-index: 2;
+  }
+  
+  /* Style the button */
+  #recently-viewed-button {
+    background-color: #550d0d;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    & >  .eye {
+       margin-top: 5px;
+        height: 10px;
+        margin-left: 10px;
+      }
+  }
+  
+  /* Add hover effect to the button */
+  #recently-viewed-button:hover {
+    background-color: hsl(0, 39%, 40%);
+  }
+
+  /* live button*/
+  .live-on {
+     display: block;
+  }
+  .live-box {
+    position: fixed;
+    visibility: visible;
+    cursor: pointer;
+    background-color: transparent;
+    padding: 0px;
+    margin: 0px;
+    top:70%;
+    right: 0px;
+    width: 32px;
+    transition: all 0.5s ease 0 ;
+    z-index: 999999;
+  }
+
+  .live-box-in {
+    background-color: #832729;
+    color: white;
+    padding: 7px;
+    position: relative;
+    font-size: 15px;
+    display: flex;
+    flex-direction: row;
+    writing-mode: vertical-rl;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    visibility: visible;
+    cursor: pointer;
+  }
