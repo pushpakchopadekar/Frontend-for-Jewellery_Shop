@@ -24,17 +24,17 @@ This project is a frontend implementation of a jewellery e-commerce website. It 
 Here are some screenshots of the website:
 
 1. **Home Page**  
-   ![Home Page]((https://github.com/user-attachments/assets/3b3b237c-552b-4c1e-bc1a-76df37e403d4)
+   ![Home Page](https://github.com/user-attachments/assets/3b3b237c-552b-4c1e-bc1a-76df37e403d4)
 )  
    *Description: The landing page with featured jewellery collections.*
 
 2. **Product Listing Page**  
-   ![Product Listing]((https://github.com/user-attachments/assets/8d8d4785-1a84-4a1c-8ea0-0ccba71248d6)
+   ![Product Listing](https://github.com/user-attachments/assets/8d8d4785-1a84-4a1c-8ea0-0ccba71248d6)
 )  
    *Description: Displays all available jewellery items with filters.*
 
 3. **Product Details Page**  
-   ![Product Details]((https://github.com/user-attachments/assets/f20ab10c-12d8-49e9-899a-7d31dc1ca50f)
+   ![Product Details](https://github.com/user-attachments/assets/f20ab10c-12d8-49e9-899a-7d31dc1ca50f)
 )  
    *Description: Detailed view of a selected jewellery item.*
 
@@ -44,7 +44,7 @@ Here are some screenshots of the website:
    *Description: Shows items added to the cart with a checkout option.*
 
 5. **Product Page**  
-   ![Product Page]((https://github.com/user-attachments/assets/d14aba9e-8671-4a1e-a536-96b490ddf59b)
+   ![Product Page](https://github.com/user-attachments/assets/d14aba9e-8671-4a1e-a536-96b490ddf59b)
 )  
    *Description: Buy and  placing an order.*
 
